@@ -1,30 +1,15 @@
-$(document).ready(function() {
+var navbar = document.querySelector("nav");
+var header = document.querySelector("header");
 
-    $('.js-section-features').waypoint(function(direction) {
-        if (direction == "down") {
-            $('nav').addClass('sticky');
+window.onscroll = () => {
+    makeSticky();
+}
 
-        } else {
-            $('nav').removeClass('sticky');
-
-        }
-
-
-    }, {
-        offset: '60px'
-    })
-
-
-
-});
-
-
-/*
-
-        var waypoints = $('#handler-first').waypoint(function(direction) {
-  notify(this.element.id + ' hit 25% from top of window') 
-}, {
-  offset: '25%'
-})
-
-        */
+function makeSticky(){
+    if(document.documentElement.scrollTop > header.getBoundingClientRect().bottom){
+        navbar.classList.add("sticky");
+    }
+    else{
+        navbar.classList.remove("sticky");
+    }
+}
