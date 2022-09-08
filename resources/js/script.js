@@ -1,5 +1,6 @@
 var navbar = document.querySelector("nav");
 var header = document.querySelector("header");
+const footerDate = document.querySelector(".date");
 
 window.onscroll = () => {
     makeSticky();
@@ -14,5 +15,5 @@ function makeSticky(){
     }
 }
 
-const footerDate = document.querySelector(".date");
+
 footerDate.innerHTML = `<p>Copyright &copy; ${ new Date().getFullYear() } by Omnifood. All rights reserved.</p>`;
